@@ -1,4 +1,6 @@
 <template>
+<div class="mt-3">
+  <div class="text-secondary text-center">Welcomeback <span class="font-weight-bold text-center text-info">{{ user}}</span></div>
   <div class="container text-center">
     <div class="row justify-content-center">
       <div class="col-10 col-md-10 col-lg-8 col-xl-7">
@@ -13,7 +15,7 @@
           >Vue.js</a>
           with
           <a href="https://firebase.google.com">Firebase</a>.
-          <FontAwesomeIcon icon="star" class=""></FontAwesomeIcon>
+          <!--<FontAwesomeIcon icon="star" class=""></FontAwesomeIcon>-->
         </p>
         <router-link class="btn btn-outline-primary mr-2" to="/register">Register</router-link>
         <router-link class="btn btn-outline-primary mr-2" to="/login">Log In</router-link>
@@ -21,17 +23,20 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 
 export default {
   name: "Home",
   components: {
-    FontAwesomeIcon
+    //FontAwesomeIcon
   },
+  props: ['user']
 };
 </script>
