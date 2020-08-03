@@ -14,19 +14,23 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/',
+    path: '/login',
     name: 'Login',
     component: Login
   },
   {
-    path: '/',
+    path: '/register',
     name: 'Register',
     component: Register
   },
   {
-    path: '/',
+    path: '/meetings',
     name: 'Meetings',
     component: Meetings
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 
 ]
