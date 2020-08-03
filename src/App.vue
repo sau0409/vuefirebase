@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Navigation></Navigation>
-    <router-view class="container" :user="user" />
+    <Navigation :user="user" @logout="logout"></Navigation>
+    <router-view class="container" @logout="logout" :user="user" />
   </div>
 </template>
 
@@ -18,18 +18,33 @@ export default {
       user: "",
     };
   },
+  methods: {
+    logout() {
+      db.app.auth()
+      .signOut()
+      .then(() => {
+        this.user = "";
+        this.$router.push('/login');
+      }).catch((err) => (this.error = err.message));
+    }
+  },
   components: {
     Navigation,
   },
   mounted() {
-    db.collection("users")
+    db.app.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.user = user.displayName;
+      }
+    })
+   /* db.collection("users")
       .doc("RqnLWg6MoJab7PFITUU6")
       .get()
       .then((snapshot) => {
         console.log(snapshot);
         console.log(snapshot.data());
         this.user = snapshot.data().name;
-      });
+      });*/
   },
 };
 </script>
