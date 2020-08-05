@@ -7,7 +7,7 @@
       :user="user"
       :meetings="meetings"
       @addMeeting="addMeeting"
-      @deleteMeeting="deleteMeeting"
+      @deletemeeting="deleteMeeting"
       @checkin="checkin"
       :error="error"
     />

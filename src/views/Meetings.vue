@@ -46,11 +46,11 @@
                   role="group"
                   aria-label="Meeting Options"
                 >
-                  <button class="btn btn-sm btn-outline-secondary" title="Delete Meeting" @click="$emit('deleteMeeting', meeting)"><FontAwesomeIcon icon="trash" class=""></FontAwesomeIcon></button>
+                  <button class="btn btn-sm btn-outline-secondary" title="Delete Meeting" @click="$emit('deletemeeting', meeting)"><FontAwesomeIcon icon="trash" class=""></FontAwesomeIcon></button>
 
                   <router-link class="btn btn-sm btn-outline-secondary" title="Check In" :to="'/checkin/'+user.uid+'/'+meeting.id"><FontAwesomeIcon icon="link" class=""></FontAwesomeIcon></router-link>
 
-                  <router-link class="btn btn-sm btn-outline-secondary" title="Attendees" to="/"><FontAwesomeIcon icon="list-ul" class=""></FontAwesomeIcon></router-link>
+                  <router-link class="btn btn-sm btn-outline-secondary" title="Attendees" :to="'/atendees/'+user.uid+'/'+meeting.id"><FontAwesomeIcon icon="list-ul" class=""></FontAwesomeIcon></router-link>
                 </section>
 
                 <section class="pl-3 text-left align-self-center">{{meeting.name}}</section>

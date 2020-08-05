@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Meetings from '../views/Meetings.vue'
 import Checkin from '../views/Checkin.vue'
+import Atendees from '../views/Atendees.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ Vue.use(VueRouter)
     path: '/checkin/:userid/:meetingid',
     name: 'Checkin',
     component: Checkin
+  },
+  {
+    path: '/atendees/:userid/:meetingid',
+    name: 'Atendees',
+    component: Atendees
   },
   {
     path: '*',
